@@ -5,7 +5,7 @@ import me.prismskey.foreveradorable.foreveradorable.events.PlayerUseNameTagEvent
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Ageable;
-import org.bukkit.entity.Player;
+import org.bukkit.entity.Breedable;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -23,15 +23,15 @@ public class PlayerUseNameTagListener implements Listener {
 		}
 
 		if(event.getTarget() instanceof Ageable) {
-			Ageable ageable = (Ageable) event.getTarget();
+			Breedable ageable = (Breedable) event.getTarget();
 
 			if(event.getNameTag().getItemMeta().getDisplayName().toLowerCase().contains("baby") && !ageable.isAdult()) {
 				ageable.setAgeLock(true);
-				event.getPlayer().sendMessage(ForeverAdorable.MESSAGE_PREFIX + ChatColor.YELLOW + "Target Animal will remain a baby until name is changed.");
+				event.getPlayer().sendMessage(ChatColor.BLUE + "Target Animal will remain a baby until name is changed.");
 
 			} else if(!event.getNameTag().getItemMeta().getDisplayName().toLowerCase().contains("baby") && ageable.getAgeLock()) {
 				ageable.setAgeLock(false);
-				event.getPlayer().sendMessage(ForeverAdorable.MESSAGE_PREFIX + ChatColor.YELLOW + "Target Animal will now age as normal.");
+				event.getPlayer().sendMessage(ChatColor.BLUE + "Target Animal will now age as normal.");
 			}
 		}
 	}
