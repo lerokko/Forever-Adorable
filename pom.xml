@@ -6,7 +6,7 @@
 
     <groupId>me.prismskey.foreveradorable</groupId>
     <artifactId>forever-adorable</artifactId>
-    <version>1.2-SERVER26</version>
+    <version>1.2.1-SERVER26</version>
     <packaging>jar</packaging>
 
     <name>Forever Adorable</name>
